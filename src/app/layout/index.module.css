@@ -1,0 +1,8 @@
+.mainContentContainer {
+  background: url('../../../public/img/background.png');
+  background-size: cover;
+}
+
+.navBar {
+  background-color: #f7bdcc;
+}

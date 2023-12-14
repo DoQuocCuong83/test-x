@@ -1,0 +1,11 @@
+.btnLaunchApp {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.testInterviewBox {
+  box-shadow: 0px 0px 16px 0px rgba(19, 92, 84, 0.15);
+}
+
+.informationBox {
+  background: rgba(255, 255, 255, 0.5);
+}
