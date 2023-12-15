@@ -2,6 +2,7 @@ import { getToken } from 'next-auth/jwt'
 import { NextRequestWithAuth } from 'next-auth/middleware'
 import { NextResponse } from 'next/server'
 import { ROUTERS } from './app/constant/router'
+import { isIpJapan } from './app/helper/ip'
 
 const middleware = async (req: NextRequestWithAuth) => {
   // block ip JP
@@ -11,9 +12,7 @@ const middleware = async (req: NextRequestWithAuth) => {
     ip = forwardedFor.split(',')?.at(0)?.split(':')?.at(3) ?? 'Unknown'
   }
 
-  console.log(ip)
-
-  if (ip?.includes('116.96.46.169')) {
+  if (ip && (await isIpJapan(ip))) {
     return NextResponse.redirect(new URL(ROUTERS.PAGE_403, req.url))
   }
 
