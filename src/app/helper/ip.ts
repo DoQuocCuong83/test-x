@@ -23,9 +23,7 @@ const isIpInBlockIp = (ip: string, listBlockIpJapan: string[][]) => {
     const arrIp = ip.split('.')
     const arrStartIp = startIp.split('.')
     const arrEndIp = endIp.split('.')
-    arrIp.forEach((_, index) =>
-      recursiveNodeIp(index, arrIp, arrStartIp, arrEndIp),
-    )
+    return recursiveNodeIp(0, arrIp, arrStartIp, arrEndIp)
   })
 }
 
