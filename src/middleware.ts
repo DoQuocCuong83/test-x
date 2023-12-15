@@ -10,9 +10,9 @@ const middleware = (req: NextRequestWithAuth, res: NextResponse) => {
     ip = forwardedFor.split(',').at(0) ?? 'Unknown'
   }
 
-  if (ip?.includes('116.96.46.169')) {
+  /* if (ip?.includes('116.96.46.169')) {
     return NextResponse.redirect(new URL(ROUTERS.PAGE_403, req.url))
-  }
+  } */
 
   // authentication
   if (req.nextUrl.pathname === ROUTERS.TEST_2) {
