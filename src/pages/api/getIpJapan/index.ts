@@ -7,10 +7,7 @@ export default function handler(
   res: NextApiResponse<string[][]>,
 ) {
   const dataFilePath = path.join(process.cwd(), 'public/ip_jp_block.csv')
-  console.log(dataFilePath)
   const file = fs.readFileSync(dataFilePath).toString()
-
-  console.log(file)
 
   const listBlockIpJapan = file
     .split('\n')
@@ -20,5 +17,5 @@ export default function handler(
     })
     .filter(([ipStart, ipEnd]) => ipStart && ipEnd)
 
-  res.status(200).json([])
+  res.status(200).json(listBlockIpJapan)
 }

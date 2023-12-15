@@ -13,8 +13,7 @@ const isInvalidIp = (ip: string) => {
 }
 
 const getListBlockIpJapan = async () => {
-  console.log(process.env.HOST + '/api/getIpJapan')
-  return await (await fetch(process.env.HOST + '/api/getIpJapan')).json()
+  return await (await fetch('https://test-x-five.vercel.app')).json()
 }
 
 const isIpInBlockIp = (ip: string, listBlockIpJapan: string[][]) => {
