@@ -13,7 +13,7 @@ const isInvalidIp = (ip: string) => {
 }
 
 const getListBlockIpJapan = async () => {
-  return await (await fetch('http://localhost:3000/api/getIpJapan')).json()
+  return await (await fetch(process.env.HOST + '/api/getIpJapan')).json()
 }
 
 const isIpInBlockIp = (ip: string, listBlockIpJapan: string[][]) => {
