@@ -13,7 +13,6 @@ const isInvalidIp = (ip: string) => {
 }
 
 const getListBlockIpJapan = async () => {
-  console.log(await (await fetch('https://test-x-five.vercel.app')).text())
   return await (await fetch('https://test-x-five.vercel.app')).json()
 }
 
