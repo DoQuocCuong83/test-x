@@ -2,10 +2,8 @@ export const isIpJapan = async (ip: string) => {
   if (isInvalidIp(ip)) {
     return false
   }
-  console.log('aaaaaaaaaa')
 
   const listBlockIpJapan = await getListBlockIpJapan()
-  console.log('bbbbbbbbbbb')
 
   return isIpInBlockIp(ip, listBlockIpJapan)
 }
